@@ -460,9 +460,9 @@ class _ContinuousDist:
             calc_pdf (function): function to calculate the probability density function
         """
         # Set the x and y values for the probability distribution
-        x_lim1, x_lim2 = self._calc_x_limit()
+        x_lim1, x_lim2 = calc_x_limit()
         self._x_vals = np.arange(x_lim1, x_lim2, 0.001)
-        self._y_vals = np.array([self.calc_pdf(x, plot=False) for x in self._x_vals])
+        self._y_vals = np.array([calc_pdf(x, plot=False) for x in self._x_vals])
 
     def plot_dist(self, x_vals: "array-like", y_vals: "array-like", title: str):
         """Plot the probability distribution for a continuous distribution
@@ -521,9 +521,9 @@ class _ContinuousDist:
         Args:
             x_vals (array-like): values of x-axis
             y_vals (array-like): values of y-axis
+            cum_p (float): cumulative probability at x
             x (float): x value
             pdf (float): probability density function at x
-            plot (bool): if True, return a plot of the distribution with cumulative probability at x highlighted
 
         Returns:
             plotly.graph_objects.Figure or float: plot of the distribution with cumulative probability at x highlighted or cumulative probability at x
