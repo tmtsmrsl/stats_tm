@@ -359,7 +359,7 @@ class PoissonDist(_DiscreteDist):
             xref="paper",
             yref="paper",
             x=0,
-            y=-0.23,
+            y=-0.15,
             font_size=12,
             font_color="lightgray",
             showarrow=False,
